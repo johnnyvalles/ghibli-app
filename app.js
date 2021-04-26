@@ -77,30 +77,4 @@ locBtn.addEventListener("click", () => {
         main.append(ul);
     });
 
-})
-
-
-
-
-
-// // Fetch all people
-// fetch(`${baseURL}people`)
-// .then(response => response.json())
-// .then(data => {
-//     console.log(data);
-// })
-// .catch(err => {
-//     console.log("Error Fetching.")
-//     console.log("Reason: ", err);
-// });
-
-// // Fetch all locations
-// fetch(`${baseURL}locations`)
-// .then(response => response.json())
-// .then(data => {
-//     console.log(data);
-// })
-// .catch(err => {
-//     console.log("Error Fetching.")
-//     console.log("Reason: ", err);
-// });
+});
