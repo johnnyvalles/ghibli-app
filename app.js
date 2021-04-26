@@ -1,44 +1,106 @@
-const app = document.getElementById("root"); 
-const logo = document.createElement("img");
-logo.src = "logo.png"; 
-const container = document.createElement("div"); 
-container.setAttribute("class", "container");
+const baseURL = "https://ghibliapi.herokuapp.com";
+const filmsBtn = document.getElementById("films-link");
+const peopleBtn = document.getElementById("people-link");
+const locBtn = document.getElementById("locations-link");
 
-app.appendChild(logo); 
-app.appendChild(container); 
+let films = undefined;
+let people = undefined;
+let locations = undefined;
 
-// Create XMLHttpRequest Object
-let request = new XMLHttpRequest();
+filmsBtn.addEventListener("click", () => {
+    const main = document.getElementsByTagName("main")[0];
+    main.innerHTML = "";
 
-// Establish new connection using GET request w/ endpoint
-request.open("GET", "https://ghibliapi.herokuapp.com/films", true); 
+    const h3 = document.createElement("h3");
+    h3.textContent = "Loading films...";
+    main.append(h3);
 
-// Process Data
-request.addEventListener("load", function() {
-    let data = JSON.parse(this.response);
-    if (request.status >= 200 && request.status < 400) {
-        data.forEach(film => {
-            const card = document.createElement("div"); 
-            card.setAttribute("class", "card"); 
+    fetch(`${baseURL}/films`)
+    .then(res => res.json())
+    .then(data => {
+        main.innerHTML = "";
 
-            const h1 = document.createElement("h1"); 
-            h1.textContent = film.title; 
+        const ul = document.createElement("ul");
 
-            const p = document.createElement("p");
-            film.description = film.description.substring(0, 300); 
-            p.textContent = `${film.description}...`;
 
-            container.appendChild(card);
-            card.appendChild(h1); 
-            card.appendChild(p); 
-        });
-    } else {
-        const err = document.createElement("h1"); 
-        err.textContent = "Oops! Something isn't right...";
-        err.style.textTransform = "uppercase"; 
-        err.style.backgroundColor = "salmon";
-        err.style.padding = "1em;"
-        app.appendChild(err); 
-    }   
-});
-request.send();
+        const filmLis = data.forEach(film => {
+            const li = document.createElement("li");
+            li.textContent = film.title;
+            ul.append(li);
+        })
+        main.append(ul);
+    });
+
+})
+
+peopleBtn.addEventListener("click", () => {
+    const main = document.getElementsByTagName("main")[0];
+    main.innerHTML = "";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = "Loading people...";
+    main.append(h3);
+
+    fetch(`${baseURL}/people`)
+    .then(res => res.json())
+    .then(data => {
+        main.innerHTML = "";
+        const ul = document.createElement("ul");
+        const peopleLis = data.forEach(person => {
+            const li = document.createElement("li");
+            li.textContent = person.name;
+            ul.append(li);
+        })
+        main.append(ul);
+    });
+
+})
+
+locBtn.addEventListener("click", () => {
+    const main = document.getElementsByTagName("main")[0];
+    main.innerHTML = "";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = "Loading locations...";
+    main.append(h3);
+
+    fetch(`${baseURL}/locations`)
+    .then(res => res.json())
+    .then(data => {
+        main.innerHTML = "";
+        const ul = document.createElement("ul");
+        const locLis = data.forEach(loc => {
+            const li = document.createElement("li");
+            li.textContent = loc.name;
+            ul.append(li);
+        })
+        main.append(ul);
+    });
+
+})
+
+
+
+
+
+// // Fetch all people
+// fetch(`${baseURL}people`)
+// .then(response => response.json())
+// .then(data => {
+//     console.log(data);
+// })
+// .catch(err => {
+//     console.log("Error Fetching.")
+//     console.log("Reason: ", err);
+// });
+
+// // Fetch all locations
+// fetch(`${baseURL}locations`)
+// .then(response => response.json())
+// .then(data => {
+//     console.log(data);
+// })
+// .catch(err => {
+//     console.log("Error Fetching.")
+//     console.log("Reason: ", err);
+// });
