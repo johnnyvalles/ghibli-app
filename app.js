@@ -7,6 +7,10 @@ let films = undefined;
 let people = undefined;
 let locations = undefined;
 
+function createFilmHTML(film) {
+    return null;
+}
+
 filmsBtn.addEventListener("click", () => {
     const main = document.getElementsByTagName("main")[0];
     main.innerHTML = "";
@@ -20,18 +24,20 @@ filmsBtn.addEventListener("click", () => {
     .then(data => {
         main.innerHTML = "";
 
-        const ul = document.createElement("ul");
+        const div = document.createElement("div");
+        div.setAttribute("class", "data-container");
 
-
-        const filmLis = data.forEach(film => {
-            const li = document.createElement("li");
-            li.textContent = film.title;
-            ul.append(li);
-        })
-        main.append(ul);
+        data.forEach(film => {
+            const filmContainer = document.createElement("div");
+            filmContainer.style.border = "2px solid black";
+            const filmHeading = document.createElement("h2");
+            filmHeading.textContent = film.title;
+            filmContainer.append(filmHeading);
+            div.append(filmContainer);
+        });
+        main.append(div);
     });
-
-})
+});
 
 peopleBtn.addEventListener("click", () => {
     const main = document.getElementsByTagName("main")[0];
@@ -46,15 +52,14 @@ peopleBtn.addEventListener("click", () => {
     .then(data => {
         main.innerHTML = "";
         const ul = document.createElement("ul");
-        const peopleLis = data.forEach(person => {
+        data.forEach(person => {
             const li = document.createElement("li");
             li.textContent = person.name;
             ul.append(li);
         })
         main.append(ul);
     });
-
-})
+});
 
 locBtn.addEventListener("click", () => {
     const main = document.getElementsByTagName("main")[0];
@@ -69,12 +74,11 @@ locBtn.addEventListener("click", () => {
     .then(data => {
         main.innerHTML = "";
         const ul = document.createElement("ul");
-        const locLis = data.forEach(loc => {
+        data.forEach(loc => {
             const li = document.createElement("li");
             li.textContent = loc.name;
             ul.append(li);
         })
         main.append(ul);
     });
-
 });
