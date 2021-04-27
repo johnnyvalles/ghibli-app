@@ -19,7 +19,7 @@ const personCardTemplate = Handlebars.compile(
     <div class="person-card-container">
         <img src="./_images/people/{{id}}">
     </div>
-    `
+  `
 );
 
 const locationCardTemplate = Handlebars.compile(
