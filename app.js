@@ -3,11 +3,6 @@ const filmsBtn = document.getElementById("films-link");
 const peopleBtn = document.getElementById("people-link");
 const locBtn = document.getElementById("locations-link");
 
-/* used for caching later */
-let films = undefined;
-let people = undefined;
-let locations = undefined;
-
 filmsBtn.addEventListener("click", () => {
   const main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
