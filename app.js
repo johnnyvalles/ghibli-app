@@ -62,16 +62,18 @@ locBtn.addEventListener("click", () => {
   const loading = loadingIconTemplate({ resource: "locations"})
   main.innerHTML = loading;
 
-  fetch(`${baseURL}/locations`)
+  fetch(`${baseURL}/locations?limit=10`)
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       main.innerHTML = "";
-      const ul = document.createElement("ul");
+      
+      const div = document.createElement("div");
+      div.setAttribute("class", "location-container");
+
       data.forEach((loc) => {
-        const li = document.createElement("li");
-        li.textContent = loc.name;
-        ul.append(li);
+        div.innerHTML += locationCardTemplate(loc);
       });
-      main.append(ul);
+      main.append(div);
     });
 });

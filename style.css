@@ -103,7 +103,8 @@ main img {
   padding: 0;
 }
 
-.people-container {
+.people-container,
+.location-container  {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -111,12 +112,14 @@ main img {
   margin: 25px 0;
 }
 
-.person-card-container {
+.person-card-container,
+.location-card-container {
   height: 200px;
   width: 50%;
 }
 
-.person-card-container img {
+.person-card-container img,
+.location-card-container img {
   height: 100%;
   width: 100%;
   object-fit: cover;
