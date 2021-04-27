@@ -102,3 +102,22 @@ main img {
 .film-desc p {
   padding: 0;
 }
+
+.people-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0 auto;
+  margin: 25px 0;
+}
+
+.person-card-container {
+  height: 200px;
+  width: 50%;
+}
+
+.person-card-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

@@ -1,4 +1,4 @@
-let filmCardTemplate = Handlebars.compile(
+const filmCardTemplate = Handlebars.compile(
   `
     <div class="film-card-container">
         <h2>{{title}}</h2>
@@ -10,6 +10,14 @@ let filmCardTemplate = Handlebars.compile(
         <div class="film-desc">
         <p>{{description}}</p>
         </div>
+    </div>
+    `
+);
+
+const personCardTemplate = Handlebars.compile(
+    `
+    <div class="person-card-container">
+        <img src="./_images/people/{{id}}">
     </div>
     `
 );

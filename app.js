@@ -7,10 +7,6 @@ let films = undefined;
 let people = undefined;
 let locations = undefined;
 
-function createFilmHTML(film) {
-  return null;
-}
-
 filmsBtn.addEventListener("click", () => {
   const main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
@@ -27,7 +23,6 @@ filmsBtn.addEventListener("click", () => {
       const div = document.createElement("div");
 
       data.forEach((film) => {
-        console.log(film.description);
         div.innerHTML += filmCardTemplate(film);
       });
 
@@ -47,13 +42,13 @@ peopleBtn.addEventListener("click", () => {
     .then((res) => res.json())
     .then((data) => {
       main.innerHTML = "";
-      const ul = document.createElement("ul");
+      const div = document.createElement("div");
+      div.setAttribute("class", "people-container");
+
       data.forEach((person) => {
-        const li = document.createElement("li");
-        li.textContent = person.name;
-        ul.append(li);
+        div.innerHTML += personCardTemplate(person);
       });
-      main.append(ul);
+      main.append(div);
     });
 });
 
