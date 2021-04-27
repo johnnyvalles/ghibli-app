@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
   background-color: #f6f6f6;
 }
 
@@ -70,8 +70,13 @@ main {
   padding: 0px 10px;
 }
 
+#logo {
+  padding: 20px 0;
+}
+
 main p {
   padding: 10px;
+  line-height: 1.4rem;
 }
 
 main img {
