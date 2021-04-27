@@ -117,7 +117,6 @@ main img {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center;
   margin: 0 auto;
   margin: 25px 0;
 }
@@ -125,8 +124,47 @@ main img {
 .person-card-container {
   height: 200px;
   width: 50%;
+  position: relative;
 }
 
+.person-card-container img {
+  transition: .5s ease;
+}
+
+.overlay {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #000;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+}
+
+.person-card-container:hover .image {
+  opacity: 0.3;
+}
+
+.person-card-container:hover .overlay {
+  opacity: 0.9;
+}
+
+.overlay h2 {
+  z-index: 100;
+  color: #FFF;
+  text-decoration: underline;
+}
 
 .location-card-container {
   width: 100%;
@@ -138,6 +176,7 @@ main img {
   transition: all 0.2s linear;
   overflow: hidden;
   font-family: "Dosis", Arial, Helvetica, sans-serif;
+  position: relative;
 }
 
 .location-card-container:hover {

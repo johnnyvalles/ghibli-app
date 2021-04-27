@@ -19,6 +19,9 @@ const personCardTemplate = Handlebars.compile(
     <div class="person-card-container">
         <img src="./_images/people/{{id}}"
           alt="picture of {{name}}">
+        <div class="overlay">
+          <h2>{{name}}<h2>
+        </div>
     </div>
   `
 );
