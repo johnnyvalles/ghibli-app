@@ -2,6 +2,15 @@ body {
   font-family: "Roboto", Arial, "Helvetica Neue", Helvetica, sans-serif;
   background-color: #f6f6f6;
 }
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
 header {
   background-color: #2f3542;
   height: 15vh;
@@ -76,7 +85,7 @@ main img {
   padding: 1rem;
   margin: 25px 0;
   border-radius: 10px;
-  font-family: "Dosis";
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
   line-height: 1.4rem;
   box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.2s linear;
@@ -108,14 +117,80 @@ main img {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: center;
   margin: 0 auto;
   margin: 25px 0;
 }
 
-.person-card-container,
-.location-card-container {
+.person-card-container {
   height: 200px;
   width: 50%;
+}
+
+
+.location-card-container {
+  width: 100%;
+  margin: 15px 0;
+  display: flex;
+  line-height: 1.4rem;
+  border-radius: 10px;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s linear;
+  overflow: hidden;
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+}
+
+.location-card-container:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, 0.15);
+  transform: translate3D(0, -2px, 0);
+}
+
+
+.location-img, .location-info {
+  width: 50%;
+}
+
+.location-info {
+  padding: 10px;
+}
+
+.location-info h3 {
+  padding: 5px 0;
+}
+
+.location-info span {
+  margin-top: 15px;
+}
+
+.location-info span:nth-child(1) {
+  border-right: 1px solid lightgray;
+}
+
+
+.location-info i {
+  font-size: 1.3rem;
+}
+.location-info span,
+.location-info i {
+  display: block;
+}
+
+.location-name {
+  text-align: center;
+  font-weight: bold;
+}
+
+.location-img {
+  height: 120px;
+}
+
+.geography {
+  display: flex;
+}
+
+.geography span {
+  width: 50%;
+  text-align: center;;
 }
 
 .person-card-container img,

@@ -26,8 +26,18 @@ const personCardTemplate = Handlebars.compile(
 const locationCardTemplate = Handlebars.compile(
   `
   <div class="location-card-container">
-    <img src="./_images/locations/{{id}}"
-      alt="picture of {{name}}">
+    <div class="location-img">
+      <img src="./_images/locations/{{id}}"
+        alt="picture of {{name}}">
+    </div>
+
+    <div class="location-info">
+      <h3 class="location-name">{{name}}</h3>
+      <div class="geography">
+        <span><i class="fas fa-cloud-sun"></i> {{climate}}</span>
+        <span><i class="fas fa-mountain"></i> {{terrain}}</span>
+      </div>
+    </div>
   </div>
   `
 );
