@@ -25,16 +25,12 @@ filmsBtn.addEventListener("click", () => {
         main.innerHTML = "";
 
         const div = document.createElement("div");
-        div.setAttribute("class", "data-container");
 
         data.forEach(film => {
-            const filmContainer = document.createElement("div");
-            filmContainer.style.border = "2px solid black";
-            const filmHeading = document.createElement("h2");
-            filmHeading.textContent = film.title;
-            filmContainer.append(filmHeading);
-            div.append(filmContainer);
+            console.log(film.description)
+            div.innerHTML += filmCardTemplate(film);
         });
+
         main.append(div);
     });
 });
