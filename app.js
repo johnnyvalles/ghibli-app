@@ -2,9 +2,9 @@ const baseURL = "https://ghibliapi.herokuapp.com";
 const filmsBtn = document.getElementById("films-link");
 const peopleBtn = document.getElementById("people-link");
 const locBtn = document.getElementById("locations-link");
+const main = document.getElementsByTagName("main")[0];
 
 filmsBtn.addEventListener("click", () => {
-  const main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
 
   const loading = loadingIconTemplate({ resource: "films"})
@@ -31,11 +31,11 @@ filmsBtn.addEventListener("click", () => {
 });
 
 peopleBtn.addEventListener("click", () => {
-  const main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
 
   const loading = loadingIconTemplate({ resource: "people"})
   main.innerHTML = loading;
+
   fetch(`${baseURL}/people`)
     .then((res) => res.json())
     .then((data) => {
@@ -56,7 +56,6 @@ peopleBtn.addEventListener("click", () => {
 });
 
 locBtn.addEventListener("click", () => {
-  const main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
 
   const loading = loadingIconTemplate({ resource: "locations"})
