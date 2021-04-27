@@ -22,8 +22,6 @@ const personCardTemplate = Handlebars.compile(
     `
 );
 
-// Making the template used for displaying locations.
-// Will look like the People template for now
 const locationCardTemplate = Handlebars.compile(
   `
   <div class="location-card-container">

@@ -75,5 +75,10 @@ locBtn.addEventListener("click", () => {
         div.innerHTML += locationCardTemplate(loc);
       });
       main.append(div);
+    })
+    .catch(err => {
+      console.log(err);
+      const loadErr = errorIconTemplate({ resource: "locations"});
+      main.innerHTML = loadErr;
     });
 });
