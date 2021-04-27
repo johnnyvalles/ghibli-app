@@ -47,6 +47,11 @@ peopleBtn.addEventListener("click", () => {
         div.innerHTML += personCardTemplate(person);
       });
       main.append(div);
+    })
+    .catch(err => {
+      console.log(err);
+      const loadErr = errorIconTemplate({ resource: "people"});
+      main.innerHTML = loadErr;
     });
 });
 
