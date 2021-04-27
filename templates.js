@@ -21,3 +21,12 @@ const personCardTemplate = Handlebars.compile(
     </div>
     `
 );
+
+const loadingIconTemplate = Handlebars.compile(
+    `
+    <div class="loading">
+        <span><i class="fas fa-sync"></i></span>
+        <h2>Loading {{resource}}...</h2>
+    </div>
+    `
+);

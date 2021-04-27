@@ -121,3 +121,16 @@ main img {
   width: 100%;
   object-fit: cover;
 }
+
+.loading {
+  padding: 5rem 0;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.loading span {
+  font-size: 3rem;
+}
+.loading h2 {
+  padding: 1rem 0;
+}

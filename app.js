@@ -3,6 +3,7 @@ const filmsBtn = document.getElementById("films-link");
 const peopleBtn = document.getElementById("people-link");
 const locBtn = document.getElementById("locations-link");
 
+/* used for caching later */
 let films = undefined;
 let people = undefined;
 let locations = undefined;
@@ -11,9 +12,8 @@ filmsBtn.addEventListener("click", () => {
   const main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
 
-  const h3 = document.createElement("h3");
-  h3.textContent = "Loading films...";
-  main.append(h3);
+  const loading = loadingIconTemplate({ resource: "films"})
+  main.innerHTML = loading;
 
   fetch(`${baseURL}/films`)
     .then((res) => res.json())
@@ -34,10 +34,8 @@ peopleBtn.addEventListener("click", () => {
   const main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
 
-  const h3 = document.createElement("h3");
-  h3.textContent = "Loading people...";
-  main.append(h3);
-
+  const loading = loadingIconTemplate({ resource: "people"})
+  main.innerHTML = loading;
   fetch(`${baseURL}/people`)
     .then((res) => res.json())
     .then((data) => {
@@ -56,9 +54,8 @@ locBtn.addEventListener("click", () => {
   const main = document.getElementsByTagName("main")[0];
   main.innerHTML = "";
 
-  const h3 = document.createElement("h3");
-  h3.textContent = "Loading locations...";
-  main.append(h3);
+  const loading = loadingIconTemplate({ resource: "locations"})
+  main.innerHTML = loading;
 
   fetch(`${baseURL}/locations`)
     .then((res) => res.json())
