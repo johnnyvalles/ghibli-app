@@ -1,5 +1,5 @@
 let filmCardTemplate = Handlebars.compile(
-    `
+  `
     <div class="film-card-container">
         <h2>{{title}}</h2>
         <div class="film-info">
