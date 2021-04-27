@@ -17,7 +17,7 @@ const filmCardTemplate = Handlebars.compile(
 const personCardTemplate = Handlebars.compile(
   `
     <div class="person-card-container">
-        <img src="./_images/people/{{id}}"
+        <img src="_images/people/{{id}}"
           alt="picture of {{name}}">
         <div class="overlay">
           <h2>{{name}}<h2>
@@ -30,7 +30,7 @@ const locationCardTemplate = Handlebars.compile(
   `
   <div class="location-card-container">
     <div class="location-img">
-      <img src="./_images/locations/{{id}}"
+      <img src="_images/locations/{{id}}"
         alt="picture of {{name}}">
     </div>
 
