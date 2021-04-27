@@ -17,7 +17,8 @@ const filmCardTemplate = Handlebars.compile(
 const personCardTemplate = Handlebars.compile(
   `
     <div class="person-card-container">
-        <img src="./_images/people/{{id}}">
+        <img src="./_images/people/{{id}}"
+          alt="picture of {{name}}">
     </div>
   `
 );
@@ -25,7 +26,8 @@ const personCardTemplate = Handlebars.compile(
 const locationCardTemplate = Handlebars.compile(
   `
   <div class="location-card-container">
-    <img src="./_images/locations/{{id}}">
+    <img src="./_images/locations/{{id}}"
+      alt="picture of {{name}}">
   </div>
   `
 );

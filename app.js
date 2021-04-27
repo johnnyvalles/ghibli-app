@@ -61,7 +61,7 @@ locBtn.addEventListener("click", () => {
   const loading = loadingIconTemplate({ resource: "locations"})
   main.innerHTML = loading;
 
-  fetch(`${baseURL}/locations?limit=10`)
+  fetch(`${baseURL}/locations`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
