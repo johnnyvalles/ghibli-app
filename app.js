@@ -71,6 +71,11 @@ locBtn.addEventListener("click", () => {
       div.setAttribute("class", "location-container");
 
       data.forEach((loc) => {
+        if (loc.climate === "TODO")
+          loc.climate = "N/A"
+
+        if (loc.terrain === "TODO")
+          loc.terrain = "N/A"
         div.innerHTML += locationCardTemplate(loc);
       });
       main.append(div);
