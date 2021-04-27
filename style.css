@@ -122,15 +122,18 @@ main img {
   object-fit: cover;
 }
 
-.loading {
+.loading, 
+.loading-error {
   padding: 5rem 0;
   font-size: 1.8rem;
   text-align: center;
 }
 
-.loading span {
+.loading span, 
+.loading-error span {
   font-size: 3rem;
 }
-.loading h2 {
+.loading h2, 
+.loading-error h2 {
   padding: 1rem 0;
 }

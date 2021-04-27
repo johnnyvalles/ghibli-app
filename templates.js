@@ -15,7 +15,7 @@ const filmCardTemplate = Handlebars.compile(
 );
 
 const personCardTemplate = Handlebars.compile(
-    `
+  `
     <div class="person-card-container">
         <img src="./_images/people/{{id}}">
     </div>
@@ -23,10 +23,19 @@ const personCardTemplate = Handlebars.compile(
 );
 
 const loadingIconTemplate = Handlebars.compile(
-    `
+  `
     <div class="loading">
         <span><i class="fas fa-sync"></i></span>
         <h2>Loading {{resource}}...</h2>
+    </div>
+    `
+);
+
+const errorIconTemplate = Handlebars.compile(
+  `
+    <div class="loading-error">
+        <span><i class="fas fa-exclamation-circle"></i></span>
+        <h2>Error loading {{resource}}. Please try again.</h2>
     </div>
     `
 );
