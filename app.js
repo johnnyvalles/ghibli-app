@@ -1,44 +1,88 @@
-const app = document.getElementById("root"); 
-const logo = document.createElement("img");
-logo.src = "logo.png"; 
-const container = document.createElement("div"); 
-container.setAttribute("class", "container");
+const baseURL = "https://ghibliapi.herokuapp.com";
+const filmsBtn = document.getElementById("films-link");
+const peopleBtn = document.getElementById("people-link");
+const locBtn = document.getElementById("locations-link");
+const main = document.getElementsByTagName("main")[0];
 
-app.appendChild(logo); 
-app.appendChild(container); 
+filmsBtn.addEventListener("click", () => {
+  main.innerHTML = "";
 
-// Create XMLHttpRequest Object
-let request = new XMLHttpRequest();
+  const loading = loadingIconTemplate({ resource: "films"})
+  main.innerHTML = loading;
 
-// Establish new connection using GET request w/ endpoint
-request.open("GET", "https://ghibliapi.herokuapp.com/films", true); 
+  fetch(`${baseURL}/films`)
+    .then((res) => res.json())
+    .then((data) => {
+      main.innerHTML = "";
 
-// Process Data
-request.addEventListener("load", function() {
-    let data = JSON.parse(this.response);
-    if (request.status >= 200 && request.status < 400) {
-        data.forEach(film => {
-            const card = document.createElement("div"); 
-            card.setAttribute("class", "card"); 
+      const div = document.createElement("div");
 
-            const h1 = document.createElement("h1"); 
-            h1.textContent = film.title; 
+      data.forEach((film) => {
+        div.innerHTML += filmCardTemplate(film);
+      });
 
-            const p = document.createElement("p");
-            film.description = film.description.substring(0, 300); 
-            p.textContent = `${film.description}...`;
-
-            container.appendChild(card);
-            card.appendChild(h1); 
-            card.appendChild(p); 
-        });
-    } else {
-        const err = document.createElement("h1"); 
-        err.textContent = "Oops! Something isn't right...";
-        err.style.textTransform = "uppercase"; 
-        err.style.backgroundColor = "salmon";
-        err.style.padding = "1em;"
-        app.appendChild(err); 
-    }   
+      main.append(div);
+    })
+    .catch(err => {
+      console.log(err);
+      const loadErr = errorIconTemplate({ resource: "films"});
+      main.innerHTML = loadErr;
+    });
 });
-request.send();
+
+peopleBtn.addEventListener("click", () => {
+  main.innerHTML = "";
+
+  const loading = loadingIconTemplate({ resource: "people"})
+  main.innerHTML = loading;
+
+  fetch(`${baseURL}/people`)
+    .then((res) => res.json())
+    .then((data) => {
+      main.innerHTML = "";
+      const div = document.createElement("div");
+      div.setAttribute("class", "people-container");
+
+      data.forEach((person) => {
+        div.innerHTML += personCardTemplate(person);
+      });
+      main.append(div);
+    })
+    .catch(err => {
+      console.log(err);
+      const loadErr = errorIconTemplate({ resource: "people"});
+      main.innerHTML = loadErr;
+    });
+});
+
+locBtn.addEventListener("click", () => {
+  main.innerHTML = "";
+
+  const loading = loadingIconTemplate({ resource: "locations"})
+  main.innerHTML = loading;
+
+  fetch(`${baseURL}/locations`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      main.innerHTML = "";
+      
+      const div = document.createElement("div");
+      div.setAttribute("class", "location-container");
+
+      data.forEach((loc) => {
+        if (loc.climate === "TODO")
+          loc.climate = "N/A"
+
+        if (loc.terrain === "TODO")
+          loc.terrain = "N/A"
+        div.innerHTML += locationCardTemplate(loc);
+      });
+      main.append(div);
+    })
+    .catch(err => {
+      console.log(err);
+      const loadErr = errorIconTemplate({ resource: "locations"});
+      main.innerHTML = loadErr;
+    });
+});

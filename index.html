@@ -1,14 +1,103 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ghibli App</title>
-    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
-    <script src="app.js" defer></script>
-</head>
-<body>
-    <div id="root"></div>
-</body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Studio Ghibli</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Studio Ghibli</h1>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/" id="about-link">
+            <i class="far fa-question-circle"></i>
+            <span>About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="films-link">
+            <i class="fas fa-film"></i>
+            <span>Films</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="people-link">
+            <i class="fas fa-user-friends"></i>
+            <span>People</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="locations-link">
+            <i class="far fa-map"></i>
+            <span>Locations</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <img id="logo" src="/_images/logo.png" alt="studio ghibli icon" />
+      <p>
+        Studio Ghibli Inc. (Japanese: 株式会社スタジオジブリ, Hepburn:
+        Kabushiki-gaisha Sutajio Jiburi) is a Japanese animation film studio
+        headquartered in Koganei, Tokyo. The studio is best known for its
+        animated feature films, and has also produced several short films,
+        television commercials, and one television film. The studio's mascot and
+        most recognizable symbol is the character Totoro, a giant cat-like
+        spirit from the studio's 1988 film My Neighbor Totoro. Studio Ghibli's
+        highest grossing films include Spirited Away (2001), Ponyo (2008), and
+        Howl's Moving Castle (2004). The studio was founded on June 15, 1985
+        by directors Hayao Miyazaki and Isao Takahata and producer Toshio
+        Suzuki, after the success of Topcraft's anime film Nausicaä of the
+        Valley of the Wind (1984). Studio Ghibli has also collaborated with
+        video game studios on the visual development of several video games.
+      </p>
+
+      <p>
+        Five of Studio Ghibli's films are among the 10 highest-grossing anime
+        films made in Japan, with Spirited Away being number two, grossing over
+        US$380 million worldwide. Many of their works have won the Animage Anime
+        Grand Prix award, and four have won the Japan Academy Prize for
+        Animation of the Year. Five of Studio Ghibli's films have received
+        Academy Award nominations. Spirited Away won the Golden Bear in 2002 and
+        the Academy Award for Best Animated Feature Film in 2003.
+      </p>
+
+      <p>
+        On August 3, 2014, Studio Ghibli temporarily halted production,
+        following the retirement of Miyazaki. In February 2017, Suzuki announced
+        that Miyazaki had come out of retirement again to direct a new feature
+        film, How Do You Live?.
+      </p>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="templates.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
