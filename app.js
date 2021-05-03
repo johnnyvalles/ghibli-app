@@ -1,8 +1,13 @@
 const baseURL = "https://ghibliapi.herokuapp.com";
+const aboutBtn = document.getElementById("about-link");
 const filmsBtn = document.getElementById("films-link");
 const peopleBtn = document.getElementById("people-link");
 const locBtn = document.getElementById("locations-link");
 const main = document.getElementsByTagName("main")[0];
+
+document.addEventListener("DOMContentLoaded", () => {
+  main.innerHTML = aboutTemplate();
+});
 
 filmsBtn.addEventListener("click", () => {
   main.innerHTML = "";

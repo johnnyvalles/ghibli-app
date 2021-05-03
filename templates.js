@@ -1,3 +1,41 @@
+const aboutTemplate = Handlebars.compile(
+  `
+  <img id="logo" src="images/logo.png" alt="studio ghibli icon" />
+  <p>
+    Studio Ghibli Inc. (Japanese: 株式会社スタジオジブリ, Hepburn:
+    Kabushiki-gaisha Sutajio Jiburi) is a Japanese animation film studio
+    headquartered in Koganei, Tokyo. The studio is best known for its
+    animated feature films, and has also produced several short films,
+    television commercials, and one television film. The studio's mascot and
+    most recognizable symbol is the character Totoro, a giant cat-like
+    spirit from the studio's 1988 film My Neighbor Totoro. Studio Ghibli's
+    highest grossing films include Spirited Away (2001), Ponyo (2008), and
+    Howl's Moving Castle (2004). The studio was founded on June 15, 1985
+    by directors Hayao Miyazaki and Isao Takahata and producer Toshio
+    Suzuki, after the success of Topcraft's anime film Nausicaä of the
+    Valley of the Wind (1984). Studio Ghibli has also collaborated with
+    video game studios on the visual development of several video games.
+  </p>
+
+  <p>
+    Five of Studio Ghibli's films are among the 10 highest-grossing anime
+    films made in Japan, with Spirited Away being number two, grossing over
+    US$380 million worldwide. Many of their works have won the Animage Anime
+    Grand Prix award, and four have won the Japan Academy Prize for
+    Animation of the Year. Five of Studio Ghibli's films have received
+    Academy Award nominations. Spirited Away won the Golden Bear in 2002 and
+    the Academy Award for Best Animated Feature Film in 2003.
+  </p>
+
+  <p>
+    On August 3, 2014, Studio Ghibli temporarily halted production,
+    following the retirement of Miyazaki. In February 2017, Suzuki announced
+    that Miyazaki had come out of retirement again to direct a new feature
+    film, How Do You Live?.
+  </p>
+  `
+);
+
 const filmCardTemplate = Handlebars.compile(
   `
     <div class="film-card-container">
