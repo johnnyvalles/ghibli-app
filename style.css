@@ -68,6 +68,9 @@ nav ul li:nth-child(4) {
 
 main {
   padding: 0px 10px;
+  max-width: 720px;
+  margin: 0 auto;
+  background: red;
 }
 
 #logo {
