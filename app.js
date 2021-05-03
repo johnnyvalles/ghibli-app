@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 filmsBtn.addEventListener("click", () => {
   main.innerHTML = "";
 
-  const loading = loadingIconTemplate({ resource: "films"})
+  const loading = loadingIconTemplate({ resource: "films" });
   main.innerHTML = loading;
 
   fetch(`${baseURL}/films`)
@@ -28,9 +28,9 @@ filmsBtn.addEventListener("click", () => {
 
       main.append(div);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
-      const loadErr = errorIconTemplate({ resource: "films"});
+      const loadErr = errorIconTemplate({ resource: "films" });
       main.innerHTML = loadErr;
     });
 });
@@ -38,7 +38,7 @@ filmsBtn.addEventListener("click", () => {
 peopleBtn.addEventListener("click", () => {
   main.innerHTML = "";
 
-  const loading = loadingIconTemplate({ resource: "people"})
+  const loading = loadingIconTemplate({ resource: "people" });
   main.innerHTML = loading;
 
   fetch(`${baseURL}/people`)
@@ -53,9 +53,9 @@ peopleBtn.addEventListener("click", () => {
       });
       main.append(div);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
-      const loadErr = errorIconTemplate({ resource: "people"});
+      const loadErr = errorIconTemplate({ resource: "people" });
       main.innerHTML = loadErr;
     });
 });
@@ -63,30 +63,28 @@ peopleBtn.addEventListener("click", () => {
 locBtn.addEventListener("click", () => {
   main.innerHTML = "";
 
-  const loading = loadingIconTemplate({ resource: "locations"})
+  const loading = loadingIconTemplate({ resource: "locations" });
   main.innerHTML = loading;
 
   fetch(`${baseURL}/locations`)
     .then((res) => res.json())
     .then((data) => {
       main.innerHTML = "";
-      
+
       const div = document.createElement("div");
       div.setAttribute("class", "location-container");
 
       data.forEach((loc) => {
-        if (loc.climate === "TODO")
-          loc.climate = "N/A"
+        if (loc.climate === "TODO") loc.climate = "N/A";
 
-        if (loc.terrain === "TODO")
-          loc.terrain = "N/A"
+        if (loc.terrain === "TODO") loc.terrain = "N/A";
         div.innerHTML += locationCardTemplate(loc);
       });
       main.append(div);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
-      const loadErr = errorIconTemplate({ resource: "locations"});
+      const loadErr = errorIconTemplate({ resource: "locations" });
       main.innerHTML = loadErr;
     });
 });
