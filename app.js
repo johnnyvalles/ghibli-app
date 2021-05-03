@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
   main.innerHTML = aboutTemplate();
 });
 
+aboutBtn.addEventListener("click", () => {
+  main.innerHTML = aboutTemplate();
+});
+
 filmsBtn.addEventListener("click", () => {
   main.innerHTML = "";
 
