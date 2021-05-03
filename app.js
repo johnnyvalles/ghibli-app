@@ -69,7 +69,6 @@ locBtn.addEventListener("click", () => {
   fetch(`${baseURL}/locations`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       main.innerHTML = "";
       
       const div = document.createElement("div");
